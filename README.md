@@ -1,2 +1,2 @@
-# django-user-role
+# django-role
 Role for django User model
