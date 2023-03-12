@@ -19,10 +19,12 @@ jobs:
       with:
         python-version: '3.x'
     - name: Install dependencies
+      env:
+        PYPI_TOKEN: ${{ secrets.PYPI_TOKEN }}
       run: |
         curl -sSL https://install.python-poetry.org | python3 -
         poetry install
-        echo ${{ secrets.PYPI_TOKEN }}
-        poetry config pypi-token.isys35 ${{ secrets.PYPI_TOKEN }}
+        echo $PYPI_TOKEN
+        poetry config pypi-token.isys35 $PYPI_TOKEN
     - name: Publish package
       run: poetry publish --build
