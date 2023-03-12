@@ -1,0 +1,29 @@
+{% load bootstrap5 %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    {% bootstrap_css %}
+    {{ form.media.css }}
+</head>
+<body>
+    <div class="container">
+        <h1>Создание Роли</h1>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-wrapper">
+                {% bootstrap_field form.name %}
+                {% bootstrap_label form.permissions.label %}
+                {{ form.permissions }}
+            </div>
+            <div>
+                <button class="btn btn-primary" type="submit">Сохранить</button>
+            </div>
+        </form>
+    </div>
+
+{% bootstrap_javascript %}
+{{ form.media.js }}
+</body>
+</html>
