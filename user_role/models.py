@@ -23,7 +23,7 @@ class Role(models.Model):
         return self.name
 
     def natural_key(self):
-        return (self.name,)
+        return self.name,
 
 
 class User(AbstractUser):

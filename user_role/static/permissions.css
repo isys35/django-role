@@ -1,0 +1,24 @@
+.permissions, .permissions-subgroup-parent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.permissions-group, .permissions-subgroup {
+    flex-basis: calc(50% - 20px);
+    margin: 10px;
+}
+
+.permissions-subgroup .accordion-button::after {
+    content: none;
+}
+
+.permissions-subgroup .accordion-button {
+    display: flex;
+    justify-content: space-between;
+}
+
+.permissions-subgroup .accordion-body .form-check {
+    display: flex;
+    padding-left: 0;
+    justify-content: space-between;
+}
