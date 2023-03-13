@@ -25,7 +25,46 @@
 
 ### Использование модели пользователя
 
-_setting.py_
+_settings.py_
 ```python
 AUTH_USER_MODEL = "user_role.User"
 ```
+
+### Использование виджета для выбора прав
+
+_settings.py_
+```python
+PERMISSIONS_LABELS = {
+    "add": "Добавление",
+    "change": "Изменение",
+    "view": "Просмотр",
+    "delete": "Удаление",
+}
+```
+
+_forms.py_
+```python
+from django import forms
+from django.contrib.auth.models import Permission
+from django.utils.translation import gettext_lazy as _
+
+from user_role.models import Role
+from user_role.widgets import PermissionsSelectMultiply
+
+
+class RoleCreationForm(forms.ModelForm):
+    permissions = forms.ModelMultipleChoiceField(
+        label=_("Permissions"),
+        widget=PermissionsSelectMultiply(),
+        queryset=Permission.objects.all()
+    )
+
+    class Meta:
+        model = Role
+        fields = [
+            "name",
+            "permissions"
+        ]
+```
+
+<img src="widget.png"/>
