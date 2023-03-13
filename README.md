@@ -8,22 +8,24 @@
 <a href="https://github.com/isys35/django-role">
   <img src="https://img.shields.io/github/last-commit/isys35/django-role"/>
 </a>
-<h1>django-role</h1>
 
+# django-role
 
-<p>Пакет включает в себя. Модель пользователя с <b>ролью</b> вместо <b>групп</b>.</p>
+Пакет включает в себя:
+* Модель пользователя с **ролью** вместо **групп**
+* Виджет для выбора прав
 
-<p>Роль в отличии от групп связана с моделю пользователя связью <b>Один ко многим</b></p>
+Роль в отличии от групп связана с моделю пользователя связью **Один ко многим**
 
-<h2>Установка</h2>
+## Установка
 
 ```pip install django-role```
 
 ```poetry add django-role```
 
-<h3>Использование модели пользователя</h3>
+### Использование модели пользователя
 
-<small>setting.py</small>
+_setting.py_
 ```python
 AUTH_USER_MODEL = "user_role.User"
 ```
