@@ -68,3 +68,14 @@ class RoleCreationForm(forms.ModelForm):
 ```
 
 <img src="widget.png"/>
+
+### Группирование прав и настройка виджета
+
+```python
+class MyPermissionsSelectMultiply(PermissionsSelectMultiply):
+    groups_permissions = {
+        "Безопасность": ["user_role.user", "user_role.role"]
+    }
+```
+
+<img src="widget2.png"/>

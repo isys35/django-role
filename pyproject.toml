@@ -1,10 +1,14 @@
 [tool.poetry]
 name = "django-role"
-version = "0.1.1"
+version = "0.1.2"
 description = "Role for django User model"
 authors = ["isys35 <isys35@mail.ru>"]
 license = "MIT"
 readme = "README.md"
+homepage = "https://github.com/isys35/django-role"
+repository = "https://github.com/isys35/django-role"
+documentation = "https://github.com/isys35/django-role"
+keywords = ["django"]
 packages = [{ include = "user_role"}]
 include = ["LICENSE"]
 
