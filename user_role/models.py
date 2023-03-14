@@ -16,8 +16,8 @@ class Role(models.Model):
     objects = RoleManager()
 
     class Meta:
-        verbose_name = _("role")
-        verbose_name_plural = _("roles")
+        verbose_name = "Роль"
+        verbose_name_plural = "Роли"
 
     def __str__(self):
         return self.name
