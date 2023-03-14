@@ -56,7 +56,6 @@ class PermissionsSelectMultiply(RadioSelect):
         if self.groups_permissions:
             return self.groups_permissions
         groups_permissions = self._get_group_permissions_from_project()
-        print(groups_permissions)
         return groups_permissions
 
     def _get_group_permissions_from_project(self):
