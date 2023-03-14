@@ -1,4 +1,4 @@
-from django.contrib.auth.models import AbstractUser, Permission, _user_get_permissions
+from django.contrib.auth.models import AbstractUser as  AuthAbstractUser, Permission, _user_get_permissions
 from django.db import models
 
 from user_role.managers import UserManager, RoleManager
@@ -26,7 +26,7 @@ class Role(models.Model):
         return self.name,
 
 
-class User(AbstractUser):
+class AbstractUser(AuthAbstractUser):
     username = None
     groups = None
     role = models.ForeignKey(
@@ -48,6 +48,11 @@ class User(AbstractUser):
 
     objects = UserManager()
 
+    class Meta:
+        verbose_name = _("user")
+        verbose_name_plural = _("users")
+        abstract = True
+
     def get_role_permissions(self, obj=None):
         """
         Return a list of permission strings that this user has through their
@@ -55,3 +60,7 @@ class User(AbstractUser):
         return only permissions matching this object.
         """
         return _user_get_permissions(self, obj, "role")
+
+
+class User(AbstractUser):
+    ...
