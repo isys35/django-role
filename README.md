@@ -24,10 +24,16 @@
 ```poetry add django-role```
 
 ### Использование модели пользователя
+_models.py_
+```python
+from user_role.models import AbstractUser
 
+class User(AbstractUser):
+    ...
+```
 _settings.py_
 ```python
-AUTH_USER_MODEL = "user_role.User"
+AUTH_USER_MODEL = "app_name.User"
 ```
 
 ### Использование виджета для выбора прав

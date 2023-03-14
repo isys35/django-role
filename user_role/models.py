@@ -60,7 +60,3 @@ class AbstractUser(AuthAbstractUser):
         return only permissions matching this object.
         """
         return _user_get_permissions(self, obj, "role")
-
-
-class User(AbstractUser):
-    ...
