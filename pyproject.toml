@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "django-role"
-version = "0.1.4"
+version = "0.1.5"
 description = "Role for django User model"
 authors = ["isys35 <isys35@mail.ru>"]
 license = "MIT"
