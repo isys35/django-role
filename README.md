@@ -23,6 +23,15 @@
 
 ```poetry add django-role```
 
+
+_settings.py_
+```python
+INSTALLED_APPS = [
+    ...
+    "user_role"
+]
+```
+
 ### Использование модели пользователя
 _models.py_
 ```python
