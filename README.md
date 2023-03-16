@@ -43,6 +43,8 @@ class User(AbstractUser):
 _settings.py_
 ```python
 AUTH_USER_MODEL = "app_name.User"
+
+AUTHENTICATION_BACKENDS = ['user_role.backends.ModelBackend']
 ```
 
 ### Использование виджета для выбора прав
