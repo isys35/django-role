@@ -1,3 +1,5 @@
-from django.db import models
+from user_role.models import AbstractUser
 
-# Create your models here.
+
+class User(AbstractUser):
+    ...

@@ -1,3 +1,9 @@
 from django.shortcuts import render
+from django.views.generic import CreateView
 
-# Create your views here.
+from core.forms import RoleCreationForm
+
+
+class CreateRoleView(CreateView):
+    form_class = RoleCreationForm
+    template_name = "role/create.html"

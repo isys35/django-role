@@ -18,7 +18,8 @@ from django.urls import path
 from django.conf.urls.static import static
 from django.conf import settings
 
-from user_role.views import CreateRoleView, UpdateRoleView
+from user_role.views import UpdateRoleView
+from core.views import CreateRoleView
 
 urlpatterns = [
     path('admin/', admin.site.urls),

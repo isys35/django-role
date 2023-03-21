@@ -31,7 +31,7 @@ class AbstractUser(AuthAbstractUser):
     groups = None
     role = models.ForeignKey(
         Role,
-        verbose_name=_("role"),
+        verbose_name="Роль",
         blank=True,
         null=True,
         help_text=_(
